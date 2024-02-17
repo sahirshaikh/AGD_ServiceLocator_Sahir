@@ -51,6 +51,7 @@ namespace ServiceLocator.UI
 
         private void ResetMonkeyImage()
         {
+            ResetMonkeyImageColor();
             rectTransform.anchoredPosition = originalAnchoredPosition;
             rectTransform.localPosition = originalPosition;
             GetComponent<LayoutElement>().enabled = false;
