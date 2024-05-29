@@ -21,8 +21,6 @@ namespace ServiceLocator.UI
             this.owner = owner;
         }
 
-
-
         private void Awake()
         {
             monkeyImage = GetComponent<Image>();
@@ -50,8 +48,6 @@ namespace ServiceLocator.UI
             rectTransform.anchoredPosition = originalAnchoredPosition;
             GetComponent<LayoutElement>().enabled = false;
             GetComponent<LayoutElement>().enabled =true;
-
-
         }
 
         public void OnPointerDown(PointerEventData eventData)
