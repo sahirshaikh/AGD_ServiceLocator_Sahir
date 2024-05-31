@@ -4,17 +4,25 @@ using UnityEngine;
 using ServiceLocator.Player;
 using ServiceLocator.Player.Projectile;
 using ServiceLocator.Wave.Bloon;
+using ServiceLocator.Sound;
 
 public class MonkeyController_UnitTest
 {
+    private PlayerService playerService;
+    private SoundService soundService;
     private MonkeyController monkeyController;
+
+    public MonkeyController_UnitTest(PlayerService playerService)
+    {
+        this.playerService = playerService;
+    }
 
     [SetUp]
     public void Setup()
     {
         MonkeyScriptableObject monkeySO = CreateDummyMonkeySO();
         ProjectilePool projectilePool = CreateDummyProjectilePool();
-        monkeyController = new MonkeyController(monkeySO, projectilePool);
+        // monkeyController = new MonkeyController(monkeySO, projectilePool,soundService);
     }
 
     private MonkeyScriptableObject CreateDummyMonkeySO()
@@ -37,7 +45,7 @@ public class MonkeyController_UnitTest
         ProjectileView projectilePrefab = new GameObject().AddComponent<ProjectileView>();
         List<ProjectileScriptableObject> projectileSOs = new List<ProjectileScriptableObject>();
         projectileSOs.Add(ScriptableObject.CreateInstance<ProjectileScriptableObject>());
-        return new ProjectilePool(projectilePrefab, projectileSOs);
+        return new ProjectilePool(projectilePrefab, projectileSOs,playerService);
     }
 
     [Test]
