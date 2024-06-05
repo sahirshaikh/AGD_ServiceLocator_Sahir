@@ -66,6 +66,8 @@ namespace ServiceLocator.Wave.Bloon
             int reducedHealth = currentHealth - damageToTake;
             currentHealth = reducedHealth <= 0 ? 0 : reducedHealth;
 
+            
+
             if(currentHealth <= 0 && currentState == BloonState.ACTIVE)
             {
                 PopBloon();

@@ -39,6 +39,7 @@ namespace ServiceLocator.UI
         [SerializeField] private TextMeshProUGUI gameEndText;
         [SerializeField] private Button playAgainButton;
         [SerializeField] private Button quitButton;
+        [SerializeField] private Button lobbyButton;
 
         private void Start()
         {
@@ -48,6 +49,8 @@ namespace ServiceLocator.UI
             nextWaveButton.onClick.AddListener(OnNextWaveButton);
             quitButton.onClick.AddListener(OnQuitButtonClicked);
             playAgainButton.onClick.AddListener(OnPlayAgainButtonClicked);
+            lobbyButton.onClick.AddListener(OnPlayAgainButtonClicked);
+
         }
 
         public void Init(WaveService waveService, PlayerService playerService, EventService eventService)
@@ -112,7 +115,12 @@ namespace ServiceLocator.UI
             gameEndPanel.SetActive(true);
 
             if (hasWon)
+            {
                 gameEndText.SetText("You Won");
+                LevelManager.Instance.SetLevelStatus("Level1",LevelStatus.Completed);
+                LevelManager.Instance.SetLevelStatus("Level2",LevelStatus.Unlocked);
+            }
+
             else
                 gameEndText.SetText("Game Over");
         }

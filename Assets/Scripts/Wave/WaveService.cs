@@ -62,7 +62,8 @@ namespace ServiceLocator.Wave
             SpawnBloons(bloonsToSpawn, spawnPosition, 0, waveScriptableObject.SpawnRate);
         }
 
-        public async void SpawnBloons(List<BloonType> bloonsToSpawn, Vector3 spawnPosition, int startingWaypointIndex, float spawnRate)
+        // public  void SpawnBloons(List<BloonType> bloonsToSpawn, Vector3 spawnPosition, int startingWaypointIndex, float spawnRate)
+                public async void SpawnBloons(List<BloonType> bloonsToSpawn, Vector3 spawnPosition, int startingWaypointIndex, float spawnRate)
         {
             foreach(BloonType bloonType in bloonsToSpawn)
             {
@@ -72,6 +73,7 @@ namespace ServiceLocator.Wave
 
                 AddBloon(bloon);
                 await Task.Delay(Mathf.RoundToInt(spawnRate * 1000));
+                // Task.Delay(Mathf.RoundToInt(spawnRate * 1000));
             }
         }
 

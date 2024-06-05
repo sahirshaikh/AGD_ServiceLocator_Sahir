@@ -17,6 +17,6 @@ MonoBehaviour:
   Damage: 100
   Reward: 100
   Speed: 1.2
-  Sprite: {fileID: 21300000, guid: 56150d2e3c6457248bdbf858ecbcc70a, type: 3}
+  Sprite: {fileID: 21300000, guid: bd1904d967482ec4aa8a19d645fe29da, type: 3}
   LayeredBloons: 0200000002000000030000000300000003000000
   LayerBloonSpawnRate: 0.2
